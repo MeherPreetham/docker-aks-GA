@@ -4,11 +4,11 @@ FROM python:3.10-slim
 # Set the working directory
 WORKDIR /app
 
-# Copy the requirements.txt file into the container
-COPY requirements.txt
+# Copy the requirements.txt file to the /app directory inside the Docker image
+COPY requirements.txt /app/requirements.txt
 
 # Install the required packages
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r /app/requirements.txt
 
 # Copy the rest of your application code into the container
 COPY . .
