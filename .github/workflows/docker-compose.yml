@@ -33,4 +33,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/MeherPreetham/docker-aks-ga/pythonapp:latest
+          tags: ghcr.io/meherpreetham/docker-aks-ga/pythonapp:latest
