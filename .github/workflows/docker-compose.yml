@@ -13,25 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v2
-    
+
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-    
+      uses: docker/setup-buildx-action@v1
+
     - name: Log in to GitHub Container Registry
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
-        username: MeherPreetham
-        password: GHCR_PAT
-    
+        username: ${{ github.actor }}
+        password: ${{ secrets.GHCR_PAT }}
+
     - name: Build and push Docker image
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v2
       with:
-        context: .
         push: true
-        tags: ghcr.io/meherpreetham/pythonapp:latest
-    
-    - name: Image digest
-      run: echo ${{ steps.build.outputs.digest }}
+        tags: ghcr.io/${{ github.repository }}/pythonapp:latest
