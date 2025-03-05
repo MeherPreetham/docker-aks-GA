@@ -1,19 +1,25 @@
 # Dockerfile
 
 # Use the official Python image from the Docker Hub
-FROM python:3.8-slim
+FROM ubuntu:22.04.5 LTS
 
 # Set the working directory
 WORKDIR /app
 
+#installl Python 3.8 and other dependencies
+RUN apt-get update && apt-get install -y \
+    python3.8 \
+    python3-pip \
+    && rm -f /var/lib/apt/lists/*
+
+# Upgrade pip and setuptools
+RUN python3.8 -m pip install --upgrade pip setuptools
+
 # Copy the requirements file to the working directory
 COPY requirements.txt /app/requirements.txt
 
-# Upgrade pip and setuptools
-RUN pip install --upgrade pip setuptools
-
 # Install the required packages
-RUN pip install -r /app/requirements.txt
+RUN python3.8 -m pip install -r /app/requirements.txt
 
 # Copy the rest of the application code to the working directory
 COPY . /app
