@@ -10,7 +10,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
-    && rm -f /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip and setuptools
 RUN python3.10 -m pip install --upgrade pip setuptools
