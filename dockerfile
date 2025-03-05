@@ -4,9 +4,8 @@
 FROM ubuntu:22.04 AS base
 
 # Set the working directory
-WORKDIR /app
-
-#installl Python 3.10 and other dependencies
+WORKDIR / app
+#install Python 3.10 and other dependencies
 RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
@@ -25,4 +24,4 @@ RUN python3.10 -m pip install -r /app/requirements.txt
 COPY . /app
 
 # Command to run the application
-CMD ["python3", "app.py"]
+CMD ["python3", "GAIslandapproach.py"]
