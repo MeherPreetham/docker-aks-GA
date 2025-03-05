@@ -2,11 +2,11 @@ import random
 import numpy as np
 
 # Parameters
-NUM_TASKS = 100 # Number of tasks (simplified for demonstration)
-NUM_CORES = 16   # Number of processor cores
-NUM_ISLANDS = 16 # Number of islands
-POPULATION_SIZE = 7  # Population size per island
-NUM_GENERATIONS = 20  # Number of generations
+NUM_TASKS = 100000 # Number of tasks (simplified for demonstration)
+NUM_CORES = 8   # Number of processor cores
+NUM_ISLANDS = 8 # Number of islands
+POPULATION_SIZE = 1250  # Population size per island
+NUM_GENERATIONS = 100  # Number of generations
 MIGRATION_INTERVAL = 2  # Migrate every 2 generations
 MIGRATION_RATE = 1  # Number of individuals to migrate
 
