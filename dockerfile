@@ -1,7 +1,7 @@
 # Dockerfile
 
 # Use the official Python image from the Docker Hub
-FROM ubuntu:22.04.5
+FROM ubuntu:22.04
 
 # Set the working directory
 WORKDIR /app
