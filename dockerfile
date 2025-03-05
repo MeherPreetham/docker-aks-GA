@@ -4,7 +4,7 @@
 FROM ubuntu:22.04 AS base
 
 # Set the working directory
-WORKDIR / app
+WORKDIR /app
 #install Python 3.10 and other dependencies
 RUN apt-get update && apt-get install -y \
     python3.10 \
